@@ -8,9 +8,9 @@
 #define NUM_SAMPLES 1728
 #define STD_DEVIATION 128
 #define NUM_SOURCES 4
-#define COMPILETIME "18 Dec 2017"
+#define COMPILETIME "21 Dec 2017"
 #define NPBVERSION "3.3.1"
-#define MPICC "mpif90"
+#define MPICC "mpicc"
 #define CFLAGS "-O"
 #define CLINK "$(MPICC)"
 #define CLINKFLAGS "-O"

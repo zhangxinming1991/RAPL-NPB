@@ -8,17 +8,18 @@ include ../sys/make.common
 #Override PROGRAM
 DTPROGRAM  = $(BINDIR)/$(BENCHMARK).$(CLASS).x
 
-OBJS = dt.o DGraph.o \
+OBJS = dt.o DGraph.o rapl_read.o\
 	${COMMON}/c_print_results.o ${COMMON}/c_timers.o ${COMMON}/c_randdp.o
 
 
 ${PROGRAM}: config ${OBJS}
-	${CLINK} ${CLINKFLAGS} -o ${DTPROGRAM} ${OBJS} ${CMPI_LIB}
+	${CLINK} ${CLINKFLAGS} -o ${DTPROGRAM} ${OBJS} ${CMPI_LIB} -lm
 
 .c.o:
 	${CCOMPILE} $<
 
-dt.o:             dt.c  npbparams.h
+rapl_read.o:         rapl_read.c
+dt.o:             dt.c  npbparams.h rapl_read.h
 DGraph.o:	DGraph.c DGraph.h
 
 clean:

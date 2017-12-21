@@ -77,7 +77,7 @@ FLINKFLAGS = -O
 # This is the C compiler used for MPI programs
 #---------------------------------------------------------------------------
 #MPICC = cc
-MPICC = mpif90
+MPICC = mpicc
 # This links MPI C programs; usually the same as ${MPICC}
 CLINK	= $(MPICC)
 

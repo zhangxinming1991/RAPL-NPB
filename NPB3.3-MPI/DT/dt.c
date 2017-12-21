@@ -43,6 +43,7 @@
 
 #include "mpi.h"
 #include "npbparams.h"
+#include "rapl_read.h"
 
 #ifndef CLASS
 #define CLASS 'S'
@@ -666,6 +667,13 @@ return verified;
 }
 
 int main(int argc,char **argv ){
+//     int cpu_model=detectCpu_();
+  //      detectPackages_();
+//	int core = 0;
+ // int result = raplMsrBefore_(core,cpu_model);
+
+printf("hello,world\n");
+
   int my_rank,comm_size;
   int i;
   DGraph *dg=NULL;
@@ -755,5 +763,8 @@ int main(int argc,char **argv ){
         	       CLINKFLAGS );
     }          
     MPI_Finalize();
+
+//  result=raplMsrAfter_(core,cpu_model);
+printf("end\n");
   return 1;
 }

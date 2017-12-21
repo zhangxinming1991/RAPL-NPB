@@ -5,9 +5,9 @@
    It sets the number of processors and the class of the NPB
    in this directory. Do not modify it by hand.   */
    
-#define COMPILETIME "18 Dec 2017"
+#define COMPILETIME "21 Dec 2017"
 #define NPBVERSION "3.3.1"
-#define MPICC "mpif90"
+#define MPICC "mpicc"
 #define CFLAGS "-O"
 #define CLINK "$(MPICC)"
 #define CLINKFLAGS "-O"
