@@ -10,7 +10,8 @@ OBJS = bt.o make_set.o initialize.o exact_solution.o exact_rhs.o \
        set_constants.o adi.o define.o copy_faces.o rhs.o solve_subs.o \
        x_solve$(VEC).o y_solve$(VEC).o z_solve$(VEC).o add.o error.o \
        verify.o setup_mpi.o \
-       ${COMMON}/print_results.o ${COMMON}/timers.o
+       ${COMMON}/print_results.o ${COMMON}/timers.o \
+	rapl_read.o
 
 include ../sys/make.common
 
@@ -100,6 +101,7 @@ fortran_io.o:     fortran_io.f mpinpb.h npbparams.h
 simple_mpiio.o:   simple_mpiio.f mpinpb.h npbparams.h 
 full_mpiio.o:     full_mpiio.f mpinpb.h npbparams.h 
 epio.o:           epio.f mpinpb.h npbparams.h 
+rapl_read.o:	  rapl_read.c
 
 clean:
 	- rm -f *.o *~ mputil*

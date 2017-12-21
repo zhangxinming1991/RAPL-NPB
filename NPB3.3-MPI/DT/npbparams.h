@@ -14,5 +14,5 @@
 #define CFLAGS "-O"
 #define CLINK "$(MPICC)"
 #define CLINKFLAGS "-O"
-#define CMPI_LIB "-L/usr/local/lib -lmpi"
+#define CMPI_LIB "-L/usr/local/lib -lmpi -lm"
 #define CMPI_INC "-I/usr/local/include"

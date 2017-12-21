@@ -667,12 +667,11 @@ return verified;
 }
 
 int main(int argc,char **argv ){
-//     int cpu_model=detectCpu_();
-  //      detectPackages_();
-//	int core = 0;
- // int result = raplMsrBefore_(core,cpu_model);
+     int cpu_model=detectCpu_();
+        detectPackages_();
+	int core = 0;
+  int result = raplMsrBefore_(core,cpu_model);
 
-printf("hello,world\n");
 
   int my_rank,comm_size;
   int i;
@@ -764,7 +763,7 @@ printf("hello,world\n");
     }          
     MPI_Finalize();
 
-//  result=raplMsrAfter_(core,cpu_model);
-printf("end\n");
+  result=raplMsrAfter_(core,cpu_model);
+
   return 1;
 }

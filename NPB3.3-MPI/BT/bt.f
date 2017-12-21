@@ -47,10 +47,12 @@ c---------------------------------------------------------------------
 
        include  'header.h'
        include  'mpinpb.h'
-      
+!	include 'rapl_read.h'
+	
+      integer core,cpu_model,res
        integer i, niter, step, c, error, fstatus
        double precision navg, mflops, mbytes, n3
-
+                                         
        external timer_read
        double precision t, tmax, tiominv, tpc, timer_read
        logical verified
@@ -64,6 +66,14 @@ c---------------------------------------------------------------------
        data t_recs/'total', 'i/o', 'rhs', 'xsolve', 'ysolve', 'zsolve', 
      >             'bpack', 'exch', 'xcomm', 'ycomm', 'zcomm',
      >             ' totcomp', ' totcomm'/
+
+	core = 0
+	res = -1
+	cpu_model = 0
+ 	call detectcpu(cpu_model)
+	print *, "cpu_model ", cpu_model
+	call detectpackages
+	call raplmsrbefore(core,cpu_model)
 
        call setup_mpi
        if (.not. active) goto 999
@@ -324,5 +334,6 @@ c---------------------------------------------------------------------
        call mpi_barrier(MPI_COMM_WORLD, error)
        call mpi_finalize(error)
 
+	call raplmsrafter(core,cpu_model)
        end
 

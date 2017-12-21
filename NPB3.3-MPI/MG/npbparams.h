@@ -25,10 +25,10 @@ c
         parameter (cs1='mpif90')
         character*9 cs2
         parameter (cs2='$(MPIF77)')
-        character*22 cs3
-        parameter (cs3='-L/usr/local/lib -lmpi')
-        character*20 cs4
-        parameter (cs4='-I/usr/local/include')
+        character*23 cs3
+        parameter (cs3='-L/usr/local/lib -lmpi ')
+        character*21 cs4
+        parameter (cs4='-I/usr/local/include ')
         character*2 cs5
         parameter (cs5='-O')
         character*2 cs6

@@ -13,7 +13,7 @@ OBJS = dt.o DGraph.o rapl_read.o\
 
 
 ${PROGRAM}: config ${OBJS}
-	${CLINK} ${CLINKFLAGS} -o ${DTPROGRAM} ${OBJS} ${CMPI_LIB} -lm
+	${CLINK} ${CLINKFLAGS} -o ${DTPROGRAM} ${OBJS} ${CMPI_LIB} 
 
 .c.o:
 	${CCOMPILE} $<
